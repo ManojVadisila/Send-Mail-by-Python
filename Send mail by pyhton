@@ -1,0 +1,18 @@
+import smtplib
+
+mail = "Your mail id"
+password = "See password in app passwords"
+
+send_mail = smtplib.SMTP("smtp.gmail.com" , 587)
+#smtp.gmail.com will change for yahoo,outlook and remaining mail platforms.
+
+send_mail.starttls()
+send_mail.login(mail, password )
+send_mail.sendmail(
+    from_addr="manojvadisila14@gmail.com",
+    to_addrs= "manojvadisila@gmail.com",
+    msg = "Subject:manoj\n\n this is the body  "
+    )
+send_mail.close()
+
+#now u can go and check in sent mail in your mail id
